@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+    }
+
+    .ticket {
+        filter: drop-shadow(3px 2px 5px #003369);
+        width: 255px;
+        display: block;
+        margin: 15px auto;
+    }
+
+    .ticket__rip {
+        background-color: #003369;
+        height: 20px;
+        margin: 0 10px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(3px);
+    }
+
+    .ticket__rip:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 5px solid transparent;
+        border-top-color: #003369;
+        border-right-color: #003369;
+        border-radius: 100%;
+        left: -10px;
+        box-sizing:initial;
+        /* backdrop-filter: blur(3px); */
+    }
+        
+    .ticket__rip:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 5px solid transparent;
+        border-top-color: #003369;
+        border-right-color: #003369;
+        border-radius: 100%;
+        transform: translate(-50%, -50%) rotate(225deg);
+        right: -39px;
+        box-sizing:initial;
+        /* backdrop-filter: blur(3px); */
+    }
+
+    .ticket__dashline {
+        width: calc(100% - 20px);
+        border-top: 2px dashed white;
+    }
+
+    .ticket__top {
+        max-width: 100%;
+        background-color: #003369;
+        border-radius: 12px 12px 0 0;
+        display: inline-block;
+    }
+
+    .ticket__img {
+        border-radius: 12px 12px 0 0;
+        margin: 12px 12px 0 12px;
+        max-width: calc(100% - 28px);
+        border: 2px solid white;
+        user-select: none;
+        aspect-ratio: 1;
+        width: 100%;
+        height: auto;
+    }
+
+    .ticket__title {
+        margin: 6px 12px;
+        min-height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-inline-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #fff;
+    }
+
+    .ticket__bot {
+        background-color: #003369;
+        border-radius: 0 0 18px 18px;
+        text-align: center;
+        padding: 8px 0 12px 0;
+    }
+
+    .ticket__originprice {
+        text-decoration: line-through;
+        line-height: 20px;
+        color: #fff;
+    }
+
+    .ticket__saleprice {
+        transform: translate(50%,-50%);
+        text-transform: uppercase;
+        font-size: 65px;
+        font-weight: 700;
+        color: #ffd300;
+        text-shadow: 1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 1px 1px #005cdc,
+                     1px 9px 6px rgba(16,16,16,0.4),
+                     1px 11px 10px rgba(16,16,16,0.2),
+                     1px 12px 35px rgba(16,16,16,0.2),
+                     1px 15px 60px rgba(16,16,16,0.4);
+        line-height: 80px;
+        user-select: none;
+    }
+
+    .ticket__btn {
+        font-weight: 600;
+        background-color: #0062ed;
+        padding: 5px 10px;
+        border-radius: 15px;
+        line-height: 38px;
+        user-select: none;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .ticket__btn:hover {
+        cursor: pointer;
+    }
+
+    .ticket__saletag {
+        position: absolute;
+        padding: 5px;
+        top: 12px;
+        right: 28px;
+        width: 38px;
+        width: 38px;
+        background-color: #f6911e;
+        color: #fff;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .ticket__saletag::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        right: 0;
+        border-style: solid;
+        border-color: transparent #f6911e;
+        border-width: 12px 24px;
+    }
+</style>
+<body>
+    <!--#region ticket-->
+    <div class="ticket"> 
+        <div class="ticket__saletag">-50%</div>
+        <div class="ticket__top">
+            <img class="ticket__img" src="https://cdn.dealtoday.vn/img/c280x280/combo-mon-phap-menu-818k-thuong-hang-trua-toi-cho-2-nguoi-tai-he-thong-48-bistro-avt_19042024140926.jpg?sign=sgKxxlfe0msZTcoOv_djFw" alt="Combo món Pháp tại Hệ thống 48 Bistro" height="280" width="280" />
+            <a class="ticket__title">
+                Combo món Pháp thượng hạng trưa và tối tại Hệ thống 48 Bistro - Menu 818k cho 2 người
+            </a>
+        </div>
+        <div class="ticket__rip">
+            <div class="ticket__dashline"></div>
+        </div>
+        <div class="ticket__bot">
+            <a class="ticket__originprice">510.000đ</a>
+            <br>
+            <a class="ticket__saleprice">255K</a>
+            <br>
+            <a class="ticket__btn" href="#">Mua ngay</a>
+        </div>
+    </div>
+    <!--#endregion-->
+</body>
+</html>
